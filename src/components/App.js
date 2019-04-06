@@ -5,9 +5,9 @@ import DataSearch from "./DataSearch";
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <CurrencyTable />
+      <div className="container">
         <DataSearch />
+        <CurrencyTable />
       </div>
     );
   }

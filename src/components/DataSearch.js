@@ -13,8 +13,17 @@ export class DataSearch extends Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <input placeholder="type a date in format RRRR-MM-DD" />
-          <button type="submit">Submit</button>
+          <div className="form-row">
+            <label className="col-form-label">Date</label>
+
+            <div className="col-6">
+              <input className="form-control" type="date" value="2011-08-19" />
+            </div>
+
+            <button type="submit" className="btn btn-info">
+              Check
+            </button>
+          </div>
         </form>
       </>
     );
