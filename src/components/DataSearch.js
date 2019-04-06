@@ -17,7 +17,13 @@ export class DataSearch extends Component {
             <label className="col-form-label">Date</label>
 
             <div className="col-6">
-              <input className="form-control" type="date" value="2011-08-19" />
+              <input
+                className="form-control"
+                data-date-format="yyyy/mm/dd"
+                type="date"
+                value=""
+                id="data-picker"
+              />
             </div>
 
             <button type="submit" className="btn btn-info">

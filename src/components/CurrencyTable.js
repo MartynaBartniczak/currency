@@ -6,9 +6,9 @@ class SampleComponent extends Component {
     const { currency } = this.props;
 
     return (
-      <div>
+      <div style={{ marginTop: "30px" }}>
         <h4>Currency Table</h4>
-        <table class="table table-sm">
+        <table className="col-6 table table-sm">
           <thead>
             <tr className="table-info">
               <th scope="col">Currency name</th>
