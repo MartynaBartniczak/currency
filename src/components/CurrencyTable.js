@@ -2,12 +2,22 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class CurrencyTable extends Component {
+  renderList() {
+    this.props.currency.map(singleCurrency => (
+      <tr>
+        <td> {singleCurrency.currency}</td>
+        <td> {singleCurrency.code} </td>
+        <td> {singleCurrency.mid}</td>
+      </tr>
+    ));
+  }
+
   render() {
     const { currency } = this.props;
-    // console.log(this.props);
+    console.log(currency);
     return (
       <div style={{ marginTop: "30px" }}>
-        <h4>Currency Table</h4>
+        <h4>Currencies Table</h4>
         <table className="col-6 table table-sm">
           <thead>
             <tr className="table-info">
@@ -16,25 +26,14 @@ class CurrencyTable extends Component {
               <th scope="col">Average exchange</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td> USD </td>
-              <td>1 USD </td>
-              <td> 0,1199</td>
-            </tr>
-            <tr>
-              <td> AUD </td>
-              <td>1 AUD </td>
-              <td> 2,7231</td>
-            </tr>
-          </tbody>
+          {/* <tbody>{this.renderList()}</tbody> */}
         </table>
       </div>
     );
   }
 }
-function mapStateToProps({ currency }) {
-  return { currency };
+function mapStateToProps({ currencies }) {
+  return { currencies };
 }
 
 export default connect(mapStateToProps)(CurrencyTable);
