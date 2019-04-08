@@ -8,17 +8,18 @@ export class DataSearch extends Component {
     super(props);
 
     this.state = { date: "" };
-    this.onInputChange = this.dateChange.bind(this);
+    this.dateChange = this.dateChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   dateChange(event) {
-    console.log(event);
+    console.log(event.target.value);
     this.setState({ date: event.target.value });
   }
 
   handleSubmit(event) {
+    const date = event.target.value;
     event.preventDefault();
-    this.props.fetchCurrency();
+    this.props.fetchCurrency(date);
   }
 
   render() {
@@ -35,7 +36,7 @@ export class DataSearch extends Component {
                 type="date"
                 id="data-picker"
                 value={this.state.date}
-                onChange={this.onInputChange}
+                onChange={this.dateChange}
               />
             </div>
 
