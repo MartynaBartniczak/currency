@@ -17,7 +17,7 @@ export class DataSearch extends Component {
   }
 
   handleSubmit(event) {
-    const date = event.target.value;
+    const date = this.state.date;
     event.preventDefault();
     this.props.fetchCurrency(date);
   }

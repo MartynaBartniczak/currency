@@ -14,7 +14,7 @@ class CurrencyTable extends Component {
 
   render() {
     const { currency } = this.props;
-    console.log(currency);
+
     return (
       <div style={{ marginTop: "30px" }}>
         <h4>Currencies Table</h4>
