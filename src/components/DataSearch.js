@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators, compose } from "redux";
+import { bindActionCreators } from "redux";
 import { fetchCurrency } from "../actions/index";
 
 export class DataSearch extends Component {
   handleSubmit(event) {
     event.preventDefault();
-    this.props.fetchWeather("2016-03-30");
+    this.props.fetchCurrency();
   }
 
   render() {
@@ -23,6 +23,7 @@ export class DataSearch extends Component {
                 type="date"
                 value=""
                 id="data-picker"
+                readOnly
               />
             </div>
 
@@ -39,9 +40,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchCurrency }, dispatch);
 }
 
-export default compose(
-  connect(
-    null,
-    mapDispatchToProps
-  )
+export default connect(
+  null,
+  mapDispatchToProps
 )(DataSearch);

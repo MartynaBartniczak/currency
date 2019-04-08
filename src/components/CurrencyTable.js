@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class SampleComponent extends Component {
+class CurrencyTable extends Component {
   render() {
     const { currency } = this.props;
-
+    // console.log(this.props);
     return (
       <div style={{ marginTop: "30px" }}>
         <h4>Currency Table</h4>
@@ -37,4 +37,4 @@ function mapStateToProps({ currency }) {
   return { currency };
 }
 
-export default connect(mapStateToProps)(SampleComponent);
+export default connect(mapStateToProps)(CurrencyTable);
