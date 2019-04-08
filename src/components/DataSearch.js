@@ -4,6 +4,18 @@ import { bindActionCreators } from "redux";
 import { fetchCurrency } from "../actions/index";
 
 export class DataSearch extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { date: "" };
+    this.onInputChange = this.dateChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  dateChange(event) {
+    console.log(event);
+    this.setState({ date: event.target.value });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.fetchCurrency();
@@ -21,9 +33,9 @@ export class DataSearch extends Component {
                 className="form-control"
                 data-date-format="yyyy/mm/dd"
                 type="date"
-                value=""
                 id="data-picker"
-                readOnly
+                value={this.state.date}
+                onChange={this.onInputChange}
               />
             </div>
 
