@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class CurrencyTable extends Component {
-  renderList() {
-    this.props.currency.map(singleCurrency => (
-      <tr>
-        <td> {singleCurrency.currency}</td>
-        <td> {singleCurrency.code} </td>
-        <td> {singleCurrency.mid}</td>
-      </tr>
-    ));
-  }
+  // renderList(choosenDate) {
+  //   const currencyName = choosenDate.list.map(currency => currency.currency);
+  //   const currencyCode = choosenDate.list.map(currency => currency.code);
+  //   const currencyMid = choosenDate.list.map(currency => currency.mid);
+  //   return (
+  //     <tr key={currencyName}>
+  //       <td> {currencyName}</td>
+  //       <td> {currencyCode} </td>
+  //       <td> {currencyMid}</td>
+  //     </tr>
+  //   );
+  // }
 
   render() {
-    const { currency } = this.props;
-
     return (
       <div style={{ marginTop: "30px" }}>
         <h4>Currencies Table</h4>
@@ -26,13 +27,14 @@ class CurrencyTable extends Component {
               <th scope="col">Average exchange</th>
             </tr>
           </thead>
-          {/* <tbody>{this.renderList()}</tbody> */}
+          {/* <tbody>{this.props.currencies.map(this.renderList)}</tbody> */}
         </table>
       </div>
     );
   }
 }
 function mapStateToProps({ currencies }) {
+  // console.log(currencies, 'currencies');
   return { currencies };
 }
 
